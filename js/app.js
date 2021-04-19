@@ -1,0 +1,2 @@
+$('#inline_calendar')
+    .calendar();
