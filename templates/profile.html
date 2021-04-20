@@ -2,12 +2,47 @@
 <html lang="en" xmlns:th="">
 <head>
     <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.min.css">
     <title>Title</title>
 </head>
 <body>
     <header th:replace="./fragments/header :: header"></header>
 
-
+    <div class = "ui calendar" id="calendar"></div>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.min.js"></script>
+    <script >
+        var calendarEl = $('#calendar');
+        calendarEl.fullCalendar({
+        header: 
+            {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'listMonth,listWeek,listDay'
+            },
+            defaultView: 'listWeek',
+            events: [
+            {
+                title: 'All Day Event',
+                start: '2021-04-20'
+            },
+            {
+                title: 'Long Event',
+                start: '2020-04-21',
+                end: '2020-04-24'
+            },
+            {
+                id: 999,
+                title: 'Repeating Event',
+                start: '2020-12-09T16:00:00'
+            }]});
+        </script>
     <footer th:replace="./fragments/footer :: footer"></footer>
 </body>
 </html>
