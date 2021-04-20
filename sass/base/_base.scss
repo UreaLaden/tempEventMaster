@@ -1,30 +1,17 @@
-.header{
-    color: $color-red;
+*,
+*::after,
+*::before{
+    margin:0;
+    padding:0;
+    box-sizing:inherit;
 }
 
-.test{
-    color:aqua;
+html{
+    font-size:62.5%;
 }
 
-body {
-    background-color: #14213dff;
-    text-align: end;
-    padding: 5px;
-}
-
-header{
-    background-color:  #fca311;
-    font-size: 20px;
-   font-family: 'Times New Roman', Times, serif;
-}
-
-footer{
-    background-color: #a2e8f5f1;
-}
-
-form {
-    border:  #14213dff;
-    border-radius: 15px;
-    border-width: 25px;
-    background-color: #9eedcbc4;
+body{
+    box-sizing:border-box;
+    padding:3rem;
+    background-image: linear-gradient(to right,$color-platinum, $color-white);
 }

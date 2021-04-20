@@ -1,80 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" xmlns:th="">
 <head>
     <meta charset="UTF-8">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Title</title>
+    <script src="/js/app.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Event Master</title>
 </head>
 <body>
-<<<<<<< HEAD
-    <h1 class="header">This is a test</h1>    
-    <p class="test">Hello</p>
 
-    
-=======
-    <header th:replace="./fragments/header :: header"></header>
+    <!-- <header th:replace="./fragments/header :: header"></header> -->
 
-    <h1 class="header">Welcome to Event Master</h1>
-
-    <nav>
-        <a href="/templates/index">Home</a>
-        <a href="/templates/Signup">Signup</a>
-        <a href="/templates/login">Login</a>
-        <a href="/templates/profile">Profile</a>
-        <a href="/templates/calendar">Calendar</a>
-        <a href="/templates/about">About</a>
-    </nav>
-    <div class="ui container">
-
-        <div class="ui menu">
-          <div class="header item">Brand</div>
-          <a class="active item">Link</a>
-          <a class="item">Link</a>
-          <div class="ui dropdown item">
-            Dropdown
-            <i class="dropdown icon"></i>
-            <div class="menu">
-              <div class="item">Action</div>
-              <div class="item">Another Action</div>
-              <div class="item">Something else here</div>
-              <div class="divider"></div>
-              <div class="item">Separated Link</div>
-              <div class="divider"></div>
-              <div class="item">One more separated link</div>
+   
+    <header class="header" th:replace="./fragments/header :: header"></header>
+    <div class="section">
+        <div class="row">
+            <div class="col-1-of-2">
+                <form action="/login" method="POST" class="form">
+                    <div class="form__group">
+                        <input  id="username-1" class="form__input"
+                                type="text"placeholder="Username" required name="username">
+                        <label for="username-1" class="form__label">Username</label>
+                    </div>
+                    <div class="form__group">
+                        <input  id="password-1" class="form__input" required type="password"
+                                placeholder="Password" name="password">
+                        <label for="password-1" class="form__label">Password</label>
+                    </div>
+                    <div class="form__group form__group--btn">
+                        <button class="btn btn--orange" type="submit">Login</button>
+                    </div>
+                </form>
             </div>
-          </div>
-          <div class="right menu">
-            <div class="item">
-              <div class="ui action left icon input">
-                <i class="search icon"></i>
-                <input type="text" placeholder="Search">
-                <button class="ui button">Submit</button>
-              </div>
+            <div class="col-1-of-2">
+                <form for="familyUsername" action="/newFamily" class="form form__create-account"
+                      method="POST">
+                    <div class="form__group">
+                        <input  id="familyUsername" class="form__input"
+                                type="text" placeholder="Choose a Username" required
+                                name="familyUsername">
+                        <label for="familyUsername" class="form__label">Choose a Username</label>
+                    </div>
+                    <div class="form__group">
+                        <input  id="familyPassword" class="form__input" type="password"
+                                placeholder="Enter a Password" name="familyPassword">
+                        <label for="familyPassword" class="form__label">Enter a Password</label>
+                    </div>
+                    <div class="form__group ">
+                        <input id="familyName" class="form__input"
+                               placeholder="Enter your family name"
+                               type="text"name="familyName">
+                        <label for="familyName" class="form__label" >Family Name</label>
+                    </div>
+                    <div class="form__group form__group--btn">
+                        <button type="submit" class="btn btn--orange">Create Account</button>
+                    </div>
+                </form>
             </div>
-            <a class="item">Link</a>
-          </div>
         </div>
-      </div>
-      
-      <br/>
-      <div class="ui container">
-        <div class="ui grid">
-          <div class="ui sixteen column">
-            <div id="calendar"></div>
-          </div>
-        </div>
-      </div>
-      
-      </div>
-    
-    <footer th:replace="./fragments/footer :: footer"></footer>
+<!--        <form action="/newFamily" method="POST">-->
+
+<!--            <label for="familyUsername">Username</label>-->
+<!--            <input id="_familyUsername" type="text" name="familyUsername">-->
+
+<!--            <label for="familyPassword">Password</label>-->
+<!--            <input id="_familyPassword" type="password" name="familyPassword">-->
+
+<!--            <label for="familyName">Family Name</label>-->
+<!--            <input id="_familyName" type="text" name="familyName">-->
+
+<!--            <input type="submit" value="Create New Family">-->
+<!--        </form>-->
+    </div>
 
 <script>
     
@@ -150,7 +156,9 @@
 		
 	});
 </script>
->>>>>>> c8784b0c661c898e9671d51b1666c9f3e57d3f3a
-</body>
 
+
+    <footer th:replace="./fragments/footer :: footer"></footer>
+
+</body>
 </html>

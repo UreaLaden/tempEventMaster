@@ -3,12 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.css">
+    <script href="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.js"></script>
+
+
+
 </head>
 <body>
     <header th:replace="./fragments/header :: header"></header>
 
     <h1>EVENT MASTER</h1>
-    <div>
+
+    <form action="/newUser" method="post">
+        <label for="username">Username</label>
+        <input id="username" type="text" name="username">
+
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password">
+
+        <label for="firstName">First Name</label>
+        <input id="firstName" type="text" name="firstName">
+
+        <label for="lastName">Last Name</label>
+        <input id="lastName" type="text" name="lastName">
+
+        <select name="role">
+            <option>Select Role</option>
+            <option>Parent</option>
+            <option>Child</option>
+        </select>
+
+        <input type="submit" value="signup">
+    </form>
+
     <img src="https://placehold.it/200x70/111" alt="User's Picture">
     <h2>Name:</h2>
     <h3>Total stats for this week:</h3>
@@ -16,7 +43,13 @@
 
     <h2>Upcoming tasks:</h2>
 
-    </div>
+   <!-- weekly calendar section-->
+
+<div id="calendar"></div>   
+
+
+
+
     <footer th:replace="./fragments/footer :: footer"></footer>
 </body>
 </html>

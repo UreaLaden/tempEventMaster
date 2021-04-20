@@ -18,7 +18,9 @@
   "homepage": "https://github.com/UreaLaden/tempEventMaster#readme",
   "dependencies": {
     "fomantic-ui-css": "^2.8.7",
+    "fullcalendar": "^5.6.0",
     "gulp": "^4.0.2",
+    "jetty": "^0.2.1",
     "node-sass": "^5.0.0"
   }
 }
