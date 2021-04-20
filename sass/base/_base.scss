@@ -1,7 +1,17 @@
-.header{
-    color: $color-red;
+*,
+*::after,
+*::before{
+    margin:0;
+    padding:0;
+    box-sizing:inherit;
 }
 
-.test{
-    color:aqua;
+html{
+    font-size:62.5%;
+}
+
+body{
+    box-sizing:border-box;
+    padding:3rem;
+    background-image: linear-gradient(to right,$color-platinum, $color-white);
 }
