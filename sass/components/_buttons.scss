@@ -2,7 +2,7 @@
     &,
     &:link,
     &:visited{
-        text-transform:uppercase;
+        text-transform:uppercase;        
         text-decoration:none;
         padding:1.5rem 3rem;
         display:inline-block;
@@ -12,11 +12,12 @@
         font-size:1.6rem;
         border:none;
         cursor:pointer;
+
     }
 
     &:hover{
         transform:translateY(-3px);
-        box-shadow: 0 1rem 2rem grba($color-black,.2);
+        box-shadow: 0 1rem 2rem rgba($color-black,.2);
     &::after{
         transform: scaleX(1.4) scaleY(1.6);
         opacity:0;
@@ -27,4 +28,14 @@
         transform:translateY(-1px);
         box-shadow: 0 .5rem 1rem rgba($color-black,.2);
     }
+
+    &--orange{
+        background-color: $color-orange;
+        color: $color-dark-blue;
+        
+        &--after{
+            background-color: $color-orange;
+        }
+    }
+
 }

@@ -14,33 +14,86 @@
     <link rel="stylesheet" href="/css/style.css">
     <script src="/js/app.js"></script>
     <link rel="stylesheet" href="/css/style.css">
-    <title>Document</title>
+    <title>Event Master</title>
 </head>
 <body>
-    <header th:replace="./fragments/header :: header"></header>
-
-    <div class="section">
-        <div class="section__container">
-            <form action="/calendar" method="GET" class="form">
-                <div class="form__heading">
-                    <h1 class="heading-primary">Welcome to the Event Master! Please sign in or create a account!</h1>
+    <!-- <header th:replace="./fragments/header :: header"></header> -->
+    <header>
+        <div class="ui container">
+            <div class="ui menu">
+                <div class="header item">Event Master</div>
+                <a class="item" href="/">Home</a>
+                <a class=" active item" href="/calendar" >Calendar</a>
+                <a class="item" href="/profile" >Profile</a>
+                <a class="item" href="/aboutus" >About</a>
+                <a class="item" href="/logout" >Logout</a>
+                <div class="ui pointing dropdown link item">
+                  Group
+                  <i class="dropdown icon"></i>
+                  <span class="menu">
+                    <div class="item">Action</div>
+                    <div class="item">Another Action</div>
+                    <div class="item">Something else here</div>
+                    <div class="divider"></div>
+                    <div class="item">Separated Link</div>
+                    <div class="divider"></div>
+                    <div class="item">One more separated link</div>
+                  </span>
                 </div>
-                <div class="form__group">
-                    <input  id="username" class="form__input" type="text" name="username">
-                    <label for="username" class="form__label">Username</label>
+                <div class="right menu">
+                    <div class="item">
+                        <div class="ui action left icon input">
+                            <i class="search icon"></i>
+                            <input type="text" placeholder="Search">
+                            <button class="ui button">Submit</button>
+                        </div>
+                    </div>
+                    <a class="item">Link </a>
                 </div>
-                <div class="form__group">
-                    <input  id="password" class="form__input" type="text" name="password">
-                    <label for="password" class="form__label">Password</label>
-                </div>
-                <div class="form__group">
-                    <button class="btn" type="submit">Login</button>
-                </div>
-            </form>
-            <form for="create-account" action="/signup" class="form">
-                <button type="submit" class="btn">Create Account</button>
-            </form>
+            </div>
         </div>
+        <div class="form__heading">
+            <h1 class="heading">
+                <span class="heading--primary">
+                    Welcome to the Event Master!
+                </span> 
+                <span class="heading--secondary">Please sign in or create a account!</span>
+            </h1>
+        </div>
+    </header>
+    <div class="section">
+            <div class="row">
+                <div class="col-1-of-2">
+                    <form action="/calendar" method="GET" class="form">
+                        <div class="form__group">
+                            <input  id="username" class="form__input" type="text"placeholder="Username" name="username">
+                            <label for="username" class="form__label">Username</label>
+                        </div>
+                        <div class="form__group">
+                            <input  id="password" class="form__input" type="text" placeholder="Password" name="password">
+                            <label for="password" class="form__label">Password</label>
+                        </div>
+                        <div class="form__group form__group--btn">
+                            <button class="btn btn--orange" type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-1-of-2">
+                    <form for="create-account" action="/signup" class="form form__create-account" method="POST">
+                        <div class="form__group">
+                            <input  id="username" class="form__input" type="text"placeholder="Choose a Username" name="username">
+                            <label for="username" class="form__label">Username</label>
+                        </div>
+                        <div class="form__group">
+                            <input  id="password" class="form__input" type="text" placeholder="Enter a Password" name="password">
+                            <label for="password" class="form__label">Password</label>
+                        </div> 
+                        <div class="form__group form__group--btn">
+                            <button type="submit" class="btn btn--orange">Create Account</button>
+                        </div>               
+                    </form>
+                </div>
+            </div>
     </div>
 
     <footer th:replace="./fragments/footer :: footer"></footer>
