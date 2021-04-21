@@ -11,38 +11,139 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.min.css">
     <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.css">
+    <script href="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header th:replace="./fragments/header :: header"></header>
+    <div class="ui container">
+        <div class="ui menu">
+            <div class="header item">Event Master</div>
+            <a class="item" href="/">Home</a>
+            <a class=" active item" href="/calendar" >Calendar</a>
+            <a class="item" href="/profile" >Profile</a>
+            <a class="item" href="/aboutus" >About</a>
+            <a class="item" href="/logout" >Logout</a>
+            <div class="ui pointing dropdown link item">
+              Group
+              <i class="dropdown icon"></i>
+              <span class="menu">
+                <div class="item">Action</div>
+                <div class="item">Another Action</div>
+                <div class="item">Something else here</div>
+                <div class="divider"></div>
+                <div class="item">Separated Link</div>
+                <div class="divider"></div>
+                <div class="item">One more separated link</div>
+              </span>
+            </div>
+            <div class="right menu">
+                <div class="item">
+                    <div class="ui action left icon input">
+                        <i class="search icon"></i>
+                        <input type="text" placeholder="Search">
+                        <button class="ui button">Submit</button>
+                    </div>
+                </div>
+                <a class="item">Link </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- <div class="col-1-of-3">
+        </div>
+        <div class="col-1-of-3"></div>
+        <div class="col-1-of-3"></div> -->
+    </div>
+    <h1>EVENT MASTER</h1>
+    <div class="section">
 
-    <div class = "ui calendar" id="calendar"></div>
+        <div class="section__primary">
+
+            <img src="../public/img/starfamily.jpeg" class="section__primary--img" alt="Family Picture">
+
+            <div class="section__primary--user-text">
+                <p>First Name:</p>
+                <p>Last Name:</p>
+                <p>Current Role:</p>
+             
+            </div>
+
+            <div class="section__primary--rewards">
+                <h3 class="heading--secondary">Total stats for this week:</h3>
+                <h4 class="heading--secondary">Reward points:<span class="points heading--primary">50</span></h4>
+            </div>
+            <div>
+            <div class="section__primary_member-group--current">
+               
+                    <ul>
+                        <li class="current--text">Bob</li>
+                        <li class="current--text">Mary Sue</li>
+                    </ul>
+                <button class="btn btn--orange">Add A Member</button>
+            
+            </div>
+    
+            <div class="section__primary_member-group--form">
+                
+                <form action="/newUser" method="post" class="section__primary--newmember">
+                    <div class="form__group">
+                        <input id="username" placeholder="Username" class="form__input" type="text">
+                        <label class="form__label" for="username">Username</label>
+                        <input id="password" placeholder="Password" class="form__input" type="password">
+                        <label class="form__label" for="password">Password</label>
+                        <input id="first-name" placeholder="First name" class="form__input" type="text">
+                        <label class="form__label" for="first-name">First Name</label>
+                        <input id="last-name" placeholder="Last name" class="form__input" type="text">
+                        <label class="form__label" for="last-name">Last Name</label>
+                        <input id="role" placeholder="role" class="form__input" type="text">
+                        <label class="form__label" for="role">Role</label>
+                    </div>
+                    
+                    <!-- <select name="role">
+                        <option>Select Role</option>
+                        <option>Parent</option>
+                        <option>Child</option>
+                    </select> -->
+                    <button class="btn btn--orange" type="submit">Add Member</button>
+                </form>
+            </div>
+            </div>
+            
+        </div>
+    
+        <section class="section__secondary">
+            <div class = "ui calendar" id="calendar"></div>
+        </section>
+    
+        <section class="section__tertiary">
+            <div class="section__tertiary--text">
+                <ul>
+                    <li>Clean room</li>
+                    <li>Clean garage</li>
+                    <li>Pick up toys</li>
+                    <li>Do homework</li>
+                    <li>Mow the lawn</li>
+                </ul>
+            </div>
+
+            <div class="section__tertiary--text">
+                <ul>
+                    <li>Wash dishes</li>
+                    <li>pick up toys</li>
+                    <li>sweep the floor</li>
+                    <li>vacuum</li>
+                    <li>Play</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+   
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.min.js"></script>
-    <script >
-        var calendarEl = $('#calendar');
-        calendarEl.fullCalendar({
-        header: 
-            {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'listMonth,listWeek,listDay'
-            },
-            defaultView: 'listWeek',
-            events: [
-            {
-                title: 'All Day Event',
-                start: '2021-04-20'
-            },
-            {
-                title: 'Long Event',
-                start: '2020-04-21',
-                end: '2020-04-24'
-            },
-            {
-                id: 999,
-                title: 'Repeating Event',
-                start: '2020-12-09T16:00:00'
-            }]});
-        </script>
+
+    <script src="../js/profile.js"></script>
+   
     <footer th:replace="./fragments/footer :: footer"></footer>
 </body>
 </html>
