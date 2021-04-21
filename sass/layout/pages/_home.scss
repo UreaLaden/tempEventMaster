@@ -87,7 +87,8 @@
 }
 .fc-widget-content{
     margin-bottom: 5rem;
-    height:30rem;
+    height: 20rem;
+    
 }
 .fc-icon-left-single-arrow{
 
@@ -98,3 +99,29 @@
 .fc-scroller{
     height:30rem;
 }
+
+// .ui-calendar-fc-fc-unthemed-fc-ltr{
+//     height: 50%;
+//     color: darkblue;
+// }
+
+// .fc-view-container {
+//     color: red;
+// }
+
+.fc-view-container {
+    width: 100% !important;
+    height: 70% !important;
+    /* box-sizing: border-box; */
+    table-layout: fixed;
+    /* border-collapse: collapse; */
+    /* border-spacing: 0; */
+    font-size: 1em;
+    background: lightblue;
+}
+
+.fc .fc-unthemed .fc-ltr {
+    width: 50% !important;
+    height: 70% !important;
+}
+
