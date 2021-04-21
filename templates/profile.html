@@ -74,19 +74,19 @@
                 <h4 class="heading--secondary">Reward points:<span class="points heading--primary">50</span></h4>
             </div>
             <div>
-            <div class="section__primary_member-group--current">
+            <div class="section__primary_member-group--current" id="member-btn">
                
                     <ul>
                         <li class="current--text">Bob</li>
                         <li class="current--text">Mary Sue</li>
                     </ul>
-                <button class="btn btn--orange">Add A Member</button>
+                <button class=" btn btn--orange-member" >Add A Member</button>
             
             </div>
     
-            <div class="section__primary_member-group--form">
+            <div class="section__primary_member-group--form" hidden='true' id="member-form">
                 
-                <form action="/newUser" method="post" class="section__primary--newmember">
+                <form action="/newUser" method="post" id="member-form--btn" class="section__primary--newmember">
                     <div class="form__group">
                         <input id="username" placeholder="Username" class="form__input" type="text">
                         <label class="form__label" for="username">Username</label>
@@ -98,6 +98,7 @@
                         <label class="form__label" for="last-name">Last Name</label>
                         <input id="role" placeholder="role" class="form__input" type="text">
                         <label class="form__label" for="role">Role</label>
+                        <button class="btn btn--orange member-btn member-form--btn"  type="submit">Add Member</button>
                     </div>
                     
                     <!-- <select name="role">
@@ -105,7 +106,6 @@
                         <option>Parent</option>
                         <option>Child</option>
                     </select> -->
-                    <button class="btn btn--orange" type="submit">Add Member</button>
                 </form>
             </div>
             </div>
@@ -117,7 +117,7 @@
         </section>
     
         <section class="section__tertiary">
-            <div class="section__tertiary--text">
+            <div class="section__tertiary--textA">
                 <ul>
                     <li>Clean room</li>
                     <li>Clean garage</li>
@@ -127,7 +127,7 @@
                 </ul>
             </div>
 
-            <div class="section__tertiary--text">
+            <div class="section__tertiary--textB">
                 <ul>
                     <li>Wash dishes</li>
                     <li>pick up toys</li>
