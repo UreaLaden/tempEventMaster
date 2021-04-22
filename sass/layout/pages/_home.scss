@@ -1,24 +1,20 @@
 .section{
     
     &__primary{
-        display: flex;
-        // flex-direction: row;
         margin: 0;
         height: 25vh;
       
        justify-content: space-between;
         &--img {
-           height: 20vh;
-            // transform: translateX(-4rem) scale(.5);
+            
+            height: 20rem;
             transition: all .5s;
             border-radius: 600px;
-            align-self: center;
-            order: -1;
-        
+            box-shadow: 0 .1rem 1rem rgba($color-black,.8);   
+                                      
         }
 
         &_member-group{
-            align-self: flex-end;
             flex: 1;
             margin-left: 15%;
            
@@ -27,20 +23,20 @@
                 order: 5;
                 flex: 1;
                 text-align: center;
-                align-self: center;
                 
             }
 
         }
         &--user-text{
-            width: 18%;
-            padding-left: 2rem;
-            line-height: .25;
+            display:block;
+            width: 100%;
+            // padding-left: 2rem;
+            // line-height: .25;
             margin-bottom: 0;
-            align-self: center;
+            // align-self: center;
         }
         &--rewards{
-            align-self: center;
+            // align-self: center;
         //    margin-left: 4%;
           
         //    justify-self: center;
@@ -54,9 +50,7 @@
         }
         
     }
-    .points{
-        font-size: 4.5rem;
-    }
+  
     .current--text{
         list-style: none;
         &:last-child{
@@ -70,7 +64,7 @@
 
     &__tertiary{
 
-      display:flex;
+    //   display:flex;
       justify-content: space-between;
       font-size:2.5rem;
       line-height: 3.5rem;
@@ -80,7 +74,7 @@
         margin-left: 2rem;
       }
       &--textB{
-        justify-self: flex-start;
+        // justify-self: flex-start;
         flex:1;
       }
     }
@@ -96,5 +90,15 @@
 
 }
 .fc-scroller{
-    height:30rem;
+    height:800px !important ;
+}
+
+.fragment-footer {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    background-color:  #fca311ff;
+    text-align: center;
+    padding: 20px ;
+    font-size: 20px;
+    border-radius: 100px
 }

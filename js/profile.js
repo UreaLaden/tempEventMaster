@@ -25,8 +25,8 @@ calendarEl.fullCalendar({
     }]});
 
     // TODO: ON CLICK SHOULD HIDE MEMBER BTN AND SHOW ADD MEMBER FORM
- $('.member-btn').click(function(){     
-    //  $('#member-btn').hide();
-     $('#member-form').show();
+ $('.member-btn').click(function(){  
+     $('#member-btn').toggle();
+     $('#member-form').toggle();
     });
  

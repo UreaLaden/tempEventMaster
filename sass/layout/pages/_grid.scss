@@ -1,7 +1,7 @@
 .row{
     max-width: $grid-width;
     margin: 0 auto;
-
+    padding-top: 5rem;
     &:not(:last-child){
         margin-bottom: $gutter-vertical;
     }
@@ -18,10 +18,86 @@
 
     .col-1-of-2{
         width: calc((100% - #{$gutter-horizontal}) / 2);
+        
+    }
+    
+    .col-1-of-3{
+        
+        height:100%; 
+        
+        &.col--1{
+            border: 2px solid red;
+            width:calc((75% - (2 * #{$gutter-horizontal}) ));
+        }
+        
+        &.col--2{
+            border: 2px solid blue;
+            width:calc((85% - (2 * #{$gutter-horizontal}))/3);                        
+            
+            &-col--3{
+                border: 2px solid palevioletred;
+                height:100%;
+           }
+           &-col--4{
+               border: 2px solid chartreuse;
+               height:100%;
+           }
+        }
+       
+    }
+}
+
+.card{
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position:relative;
+
+   
+}
+
+.member{
+    float:left;
+    margin: 0 3rem;
+    position:relative;
+    transition: all .8s ease;
+    &__name{
+        text-align: center;
+        
+        &:last-child{
+            padding-bottom: 2rem;
+        }
+    }
+    &__side{
+        
+        transition: .8s ease;
+        perspective: 150rem;
+        -moz-perspective: 150rem;
+        backface-visibility: hidden;
+        top:0%;
+        left:0%;
+        position:absolute;
+        background-size:cover;     
+        border-radius: 300px;       
+        
+        &--front{
+            
+        }
+        &--back
+        {
+            top:20%;
+            left:40%;
+
+            background-color: $color-dark-blue;            
+            transform:rotateY(180deg);
+        }
+    }
+    &:hover &__side--front
+    {
+        transform:rotateY(-180deg);
     }
 
-    .col-1-of-3{
-        width: calc((100% - 2*#{$gutter-horizontal}) /3);
-        background-color: cadetblue;
+    &:hover &__side--back
+    {
+        transform: rotateY(0);
     }
 }

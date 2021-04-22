@@ -10,12 +10,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.min.css">
-    <title>Title</title>
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.css">
     <script href="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.js"></script>
     <link rel="stylesheet" href="../css/style.css">
+    <title>Title</title>
 </head>
 <body>
+    <header>
     <div class="ui container">
         <div class="ui menu">
             <div class="header item">Event Master</div>
@@ -23,20 +24,8 @@
             <a class=" active item" href="/calendar" >Calendar</a>
             <a class="item" href="/profile" >Profile</a>
             <a class="item" href="/aboutus" >About</a>
-            <a class="item" href="/logout" >Logout</a>
-            <div class="ui pointing dropdown link item">
-              Group
-              <i class="dropdown icon"></i>
-              <span class="menu">
-                <div class="item">Action</div>
-                <div class="item">Another Action</div>
-                <div class="item">Something else here</div>
-                <div class="divider"></div>
-                <div class="item">Separated Link</div>
-                <div class="divider"></div>
-                <div class="item">One more separated link</div>
-              </span>
-            </div>
+            <a th:if="${member}"class="item" href="/logout" >Logout</a>
+           
             <div class="right menu">
                 <div class="item">
                     <div class="ui action left icon input">
@@ -49,101 +38,164 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <!-- <div class="col-1-of-3">
-        </div>
-        <div class="col-1-of-3"></div>
-        <div class="col-1-of-3"></div> -->
+    <div class="form__heading">
+        <h1 class="heading">
+            <span class="heading--primary">
+                Welcome to the Event Master!
+            </span>
+            <span class="heading--secondary-title">Please sign in or create an account!</span>
+        </h1>
+        <h1 class="heading--secondary" th:text="'Welcome back '+ ${member.firstName} + '!'">Add New
+            Family Member</h1>
     </div>
-    <h1>EVENT MASTER</h1>
-    <div class="section">
-
-        <div class="section__primary">
-
-            <img src="../public/img/starfamily.jpeg" class="section__primary--img" alt="Family Picture">
-
-            <div class="section__primary--user-text">
-                <p>First Name:</p>
-                <p>Last Name:</p>
-                <p>Current Role:</p>
-             
+</header>
+    <div class="row row--1">
+        <div class="col-1-of-3 col--1">
+            <div class="member">
+                <h2 class="heading--primary heading--primary-member">Sue Allen</h2>
+                <div class="member__card__side--front">
+                    <img src="../public/img/starfamily.jpeg" class="section__primary--img" alt="Family Picture">
+                </div>
+                <div class="section__primary--user-text">
+                    <p class="member__name">Sue Allen</p>
+                    <p class="member__name">Current Role:Parent</p>
+                </div>
+                <div class="section__primary--rewards">
+                    <h3 class="heading--secondary">Total stats for this week:</h3>
+                    <h4 class="heading--secondary">Reward points:<span class="heading--primary-points">50</span></h4>
+                </div>
             </div>
-
-            <div class="section__primary--rewards">
-                <h3 class="heading--secondary">Total stats for this week:</h3>
-                <h4 class="heading--secondary">Reward points:<span class="points heading--primary">50</span></h4>
+            <div class="member">
+                <h2 class="heading--primary heading--primary-member">Bob Allen</h2>
+                <img src="../public/img/starfamily.jpeg" class="section__primary--img" alt="Family Picture">
+                <div class="section__primary--user-text">
+                    <p class="member__name">Bob Allen</p>
+                    <p class="member__name">Current Role:Parent</p>
+                </div>
+                <div class="section__primary--rewards">
+                    <h3 class="heading--secondary">Total stats for this week:</h3>
+                    <h4 class="heading--secondary">Reward points:<span class="heading--primary-points">50</span></h4>
+                </div>
             </div>
-            <div>
+            <div class="member">
+                <h2 class="heading--primary heading--primary-member">Bob Allen</h2>
+                <img src="../public/img/starfamily.jpeg" class="section__primary--img" alt="Family Picture">
+                <div class="section__primary--user-text">
+                    <p class="member__name">Bob Allen</p>
+                    <p class="member__name">Current Role:Parent</p>
+                </div>
+                <div class="section__primary--rewards">
+                    <h3 class="heading--secondary">Total stats for this week:</h3>
+                    <h4 class="heading--secondary">Reward points:<span class="heading--primary-points">50</span></h4>
+                </div>
+            </div>
+            <div class="member">
+                <h2 class="heading--primary heading--primary-member">Bob Allen</h2>
+                <img src="../public/img/starfamily.jpeg" class="section__primary--img" alt="Family Picture">
+                <div class="section__primary--user-text">
+                    <p class="member__name">Bob Allen</p>
+                    <p class="member__name">Current Role:Parent</p>
+                </div>
+                <div class="section__primary--rewards">
+                    <h3 class="heading--secondary">Total stats for this week:</h3>
+                    <h4 class="heading--secondary">Reward points:<span class="heading--primary-points">50</span></h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-1-of-3 col--2">
             <div class="section__primary_member-group--current" id="member-btn">
-               
-                    <ul>
-                        <li class="current--text">Bob</li>
-                        <li class="current--text">Mary Sue</li>
-                    </ul>
-                <button class=" btn btn--orange-member" >Add A Member</button>
-            
+         
+                <!-- <ul>
+                    <li class="current--text" th:each="familyMember : ${member.familyIBelongTo.members} "th:text="'Name: ' + ${familyMember.firstName}">Bob</li>
+                </ul> -->
+                <button class=" btn btn--orange-member member-btn" >Add A Member</button>
+ 
             </div>
-    
-            <div class="section__primary_member-group--form" hidden='true' id="member-form">
-                
-                <form action="/newUser" method="post" id="member-form--btn" class="section__primary--newmember">
+ 
+            <div class="section__primary_member-group--form" hidden id="member-form">
+ 
+                <form th:if="${member.role} == 'parent' "th:action="'/newUser/' + ${member.familyIBelongTo.id}" method="post" id="member-form--btn" class="section__primary--newmember">
                     <div class="form__group">
-                        <input id="username" placeholder="Username" class="form__input" type="text">
+                        <input id="username" required placeholder="Username"
+                               class="form__input" type="text">
                         <label class="form__label" for="username">Username</label>
-                        <input id="password" placeholder="Password" class="form__input" type="password">
+                        <input id="password" required placeholder="Password"
+                               class="form__input" type="password" name="password">
                         <label class="form__label" for="password">Password</label>
-                        <input id="first-name" placeholder="First name" class="form__input" type="text">
-                        <label class="form__label" for="first-name">First Name</label>
-                        <input id="last-name" placeholder="Last name" class="form__input" type="text">
-                        <label class="form__label" for="last-name">Last Name</label>
-                        <input id="role" placeholder="role" class="form__input" type="text">
-                        <label class="form__label" for="role">Role</label>
-                        <button class="btn btn--orange member-btn member-form--btn"  type="submit">Add Member</button>
+                        <input id="firstName" required placeholder="First name"
+                               class="form__input"
+                               type="text" name="firstName">
+                        <label class="form__label" for="firstName">First Name</label>
+                        <input id="lastName" required placeholder="Last name"
+                               class="form__input" type="text" name="lastName">
+                        <label class="form__label" for="lastName">Last Name</label>
+                        <select name="role" required class="form__input">
+                            <option>Select Role</option>
+                            <option value="parent">Parent</option>
+                            <option value="child">Child</option>
+                        </select>
+                        <button class="btn btn--orange member-btn member-form--btn"
+                           type="submit">Add Member</button>
                     </div>
-                    
-                    <!-- <select name="role">
-                        <option>Select Role</option>
-                        <option>Parent</option>
-                        <option>Child</option>
-                    </select> -->
                 </form>
             </div>
-            </div>
             
+            <div th:replace="./fragments/member :: member"></div>
+            <div class="section__primary">
+                <div class="row section__tertiary">
+                    <div class="section__tertiary col-1-of-3 col--2-col--3"> Col 1 of 2
+                            <ul>
+                                <li>Clean room</li>
+                                <li>Clean garage</li>
+                                <li>Pick up toys</li>
+                                <li>Do homework</li>
+                                <li>Mow the lawn</li>
+                            </ul>
+                    </div>
+                </div>
+                </div>
+                <div class="row section__tertiary">
+                    <div class="section__tertiary col-1-of-3 col--2-col--4">
+                        Col 1 of 2 
+                        <ul>
+                            <li>Wash dishes</li>
+                            <li>pick up toys</li>
+                            <li>sweep the floor</li>
+                            <li>vacuum</li>
+                            <li>Play</li>
+                        </ul>
+                    </div>
+                </div>        
+            <div>                
         </div>
-    
-        <section class="section__secondary">
-            <div class = "ui calendar" id="calendar"></div>
-        </section>
-    
-        <section class="section__tertiary">
-            <div class="section__tertiary--textA">
-                <ul>
-                    <li>Clean room</li>
-                    <li>Clean garage</li>
-                    <li>Pick up toys</li>
-                    <li>Do homework</li>
-                    <li>Mow the lawn</li>
-                </ul>
-            </div>
 
-            <div class="section__tertiary--textB">
-                <ul>
-                    <li>Wash dishes</li>
-                    <li>pick up toys</li>
-                    <li>sweep the floor</li>
-                    <li>vacuum</li>
-                    <li>Play</li>
-                </ul>
-            </div>
-        </section>
     </div>
+    
 
+    <div class="section">
+
+        </div>
+
+        <section class="section__secondary">
+            <div id="calendar-profile"></div>
+        </section>
+
+        <section class="section__tertiary">
+          
+        </section>
+      
+    </div>
    
+
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.min.js"></script>
 
     <script src="../js/profile.js"></script>
    
     <footer th:replace="./fragments/footer :: footer"></footer>
+    <div class="fragment-footer" th:fragment="footer" xmlns:th="http://www.w3.org/1999/xhtml">
+        Powered by: Amelia Waggoner, Leaundrae McKinney, Barrett Nance, and Matthew Simms
+        <p><span>&#169</span> Copyright 2021</p>
+    </div>
+
 </body>
 </html>
